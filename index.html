@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Site PI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <!-- Outros elementos do cabeçalho -->
+        <div class="auth-buttons">
+            <button onclick="showLoginForm()">Entrar</button>
+            <button onclick="showRegisterForm()">Cadastrar</button>
+        </div>
+    </header>
+    
+    <!-- Formulário de Login -->
+    <div id="login-form" class="modal">
+        <form action="/login" method="POST">
+            <h2>Entrar</h2>
+            <label for="email-login">Email:</label>
+            <input type="email" id="email-login" name="email" required>
+            
+            <label for="password-login">Senha:</label>
+            <input type="password" id="password-login" name="password" required>
+            
+            <button type="submit">Entrar</button>
+            <button type="button" onclick="closeModal('login-form')">Fechar</button>
+        </form>
+    </div>
+    
+    <!-- Formulário de Cadastro -->
+    <div id="register-form" class="modal">
+        <form action="/register" method="POST">
+            <h2>Cadastrar</h2>
+            <label for="name-register">Nome:</label>
+            <input type="text" id="name-register" name="name" required>
+            
+            <label for="email-register">Email:</label>
+            <input type="email" id="email-register" name="email" required>
+            
+            <label for="password-register">Senha:</label>
+            <input type="password" id="password-register" name="password" required>
+            
+            <label for="confirm-password-register">Confirmar Senha:</label>
+            <input type="password" id="confirm-password-register" name="confirm_password" required>
+            
+            <button type="submit">Cadastrar</button>
+            <button type="button" onclick="closeModal('register-form')">Fechar</button>
+        </form>
+    </div>
+    
+    <header>
+            <img src="logo.png" alt="Logo da Empresa" class="logo"  >
+            <div class="icon">
+                <!-- Seus botões aqui -->
+            </div>
+        
+        <div class="icon">
+            <button onclick="showSection('home')">
+                <img src="botao-home.png" alt="Ícone Home" class="button-icon">
+                <span>HOME</span>
+            </button>
+        </div>
+        <div class="icon">
+            <button onclick="showSection('vaga')">
+                <img src="perfil.png" alt="Ícone de Perfil" class="button-icon">
+                <span>DESCRIÇÃO DE VAGA</span>
+            </button>
+        </div>
+        <!-- Repita a estrutura para os demais botões -->
+        
+        <div class="icon">
+            <button onclick="showSection('atendimento')">
+                <img src="atendimento.png" alt="Ícone de Atendimento" class="button-icon">
+                <span>ATENDIMENTO</span>
+            </button>
+        </div>
+        <div class="icon">
+            <button onclick="showSection('notificacao')">
+                <img src="notificacao-do-usuario.png" alt="Ícone de Notificação" class="button-icon">
+                <span>NOTIFICAÇÃO PERFIL</span>
+            </button>
+        </div>
+
+        <div class="icon">
+            <button onclick="showSection('notificacao-vaga' )">
+                <img src="vaga notific.png" alt="Ícone de Vaga" class="button-icon">
+                <span>CENTRAL DE NOTIFICAÇÕES</span>
+            </button>
+        </div>
+
+        <div class="icon">
+            <button onclick="showSection('profissoes' )">
+                <img src="professor.png" alt="Ícone de Profissões" class="button-icon">
+                <span>PROFISSÕES</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Seção Home -->
+    <section id="home" class="active">
+        <h1>Bem-vindo ao Site PI</h1>
+        <p>O nosso objetivo é conectar você com as melhores oportunidades no mercado de trabalho. Um site de desemprego que oferece benefícios tanto para empregadores quanto para os funcionários contratados.</p>
+        <p>Por exemplo, o funcionário que tiver um perfil em nosso site ganhará uma determinada quantidade de pontos, que o ajudará a conseguir empregos melhores e mais complexos. Além disso, não haverá restrição quanto à faixa etária, classe social, deficiências ou quaisquer outras barreiras. Este será um site para TODOS.</p>
+        <img src="imagem-boas-vindas.jpg" alt="Imagem ilustrativa do site" width="50%" />
+
+        <ul>
+            <li>Encontre vagas adequadas ao seu perfil.</li>
+            <li>Obtenha notificações em tempo real.</li>
+            <li>Explore as profissões mais buscadas.</li>
+        </ul>
+        
+        <h1>Profissões em Destaque</h1>
+        
+        <h4>Desenvolvedor Web:</h4>
+        <p>Profissional responsável por criar e manter sites e sistemas web. Utiliza linguagens de programação e tecnologias modernas para garantir funcionalidade, desempenho e uma boa experiência do usuário.</p>
+        
+        <h4>Analista de Dados:</h4>
+        <p>Especialista em detalhamento, organiza e interpreta grandes volumes de dados para ajudar empresas a tomarem decisões estratégicas. Trabalha com ferramentas de análise e visualização de dados.</p>
+        
+        <h4>Designer Gráfico:</h4>
+        <p>Criador de elementos visuais como logotipos, banners e materiais publicitários. Seu trabalho foca em comunicar ideias de forma criativa e atraente, utilizando núcleos, tipografia e imagens.</p>
+        
+        <p>Nosso site também oferece recursos que conectam você diretamente às melhores oportunidades no mercado de trabalho, com um sistema de pontos para facilitar o acesso a vagas mais qualificadas.</p>
+        </section>
+
+    <!-- Seção Descrição de Vaga -->
+    <section id="vaga">
+        <h2>Descrição de Vaga</h2>
+
+        <h3>Desenvolvedor Web:</h3>
+        <img src="desenvolvedor-web.jpg" alt="Desenvolvedor Web" width="50%" />
+
+        <p><strong>Descrição:</strong></p>
+        <ul>
+            <li>O desenvolvedor web é responsável por criar, construir e manter sites e aplicações web. Ele trabalha tanto no front-end (parte visível ao usuário) quanto no back-end (parte do servidor), ou pode se especializar em uma dessas áreas.</li>
+        </ul>
+        
+        <p><strong>Principais habilidades:</strong></p>
+        <ul>
+            <li><strong>Front-end:</strong> HTML, CSS, JavaScript, frameworks como React ou Angular.</li>
+            <li><strong>Back-end:</strong> Linguagens como PHP, Python, Ruby, Node.js, e bancos de dados como MySQL, MongoDB.</li>
+            <li><strong>Ferramentas:</strong> Git, Docker, ferramentas de depuração.</li>
+            <li><strong>Outras habilidades:</strong> Design responsivo, boas práticas de usabilidade e otimização de SEO.</li>
+        </ul>
+        
+        <p><strong>Atividades típicas:</strong></p>
+        <ul>
+            <li>Desenvolver layouts de sites e interfaces interativas.</li>
+            <li>Integrar sistemas e APIs.</li>
+            <li>Testar e corrigir erros em códigos.</li>
+            <li>Garantir que os sites sejam acessíveis, responsivos e rápidos.</li>
+        </ul>
+        
+        <h3>Analista de Dados:</h3>
+        <img src="analista-web.jpg" alt="Desenvolvedor Web" width="50%" />
+
+        <p><strong>Descrição:</strong></p>
+        <ul>
+            <li>O analista de dados é responsável por coletar, organizar e interpretar dados para ajudar na tomada de decisões estratégicas dentro de uma empresa.</li>
+        </ul>
+        
+        <p><strong>Principais habilidades:</strong></p>
+        <ul>
+            <li><strong>Ferramentas de análise:</strong> Excel, Power BI, Tableau.</li>
+            <li><strong>Linguagens de programação:</strong> Python, R, SQL.</li>
+            <li><strong>Estatística e matemática:</strong> Habilidade para identificar padrões, criar modelos preditivos e aplicar técnicas estatísticas.</li>
+            <li><strong>Soft skills:</strong> Comunicação para apresentar insights de forma clara.</li>
+        </ul>
+        
+        <p><strong>Atividades típicas:</strong></p>
+        <ul>
+            <li>Extrair dados de bancos ou fontes externas.</li>
+            <li>Criar relatórios e dashboards interativos.</li>
+            <li>Identificar tendências, oportunidades ou problemas nos dados.</li>
+            <li>Trabalhar em conjunto com equipes de negócios e tecnologia para criar soluções baseadas em dados.</li>
+        </ul>
+        
+        <h3>Designer Gráfico:</h3>
+        <img src="designer-grafico-web.jpg" alt="Desenvolvedor Web" width="50%" />
+
+        <p><strong>Descrição:</strong></p>
+        <ul>
+            <li>O designer gráfico é o profissional responsável por criar conceitos visuais que comunicam ideias, geralmente através de mídias digitais ou impressas.</li>
+        </ul>
+        
+        <p><strong>Principais habilidades:</strong></p>
+        <ul>
+            <li><strong>Ferramentas de design:</strong> Adobe Photoshop, Illustrator, InDesign, Figma.</li>
+            <li><strong>Conhecimentos técnicos:</strong> Tipografia, teoria das cores, composição visual.</li>
+            <li><strong>Soft skills:</strong> Criatividade, atenção aos detalhes, capacidade de trabalhar com feedbacks.</li>
+        </ul>
+        
+        <p><strong>Atividades típicas:</strong></p>
+        <ul>
+            <li>Criar logotipos, materiais de marketing (banners, flyers, etc.) e interfaces visuais.</li>
+            <li>Desenvolver identidades visuais para marcas e projetos.</li>
+            <li>Trabalhar com equipes de marketing, tecnologia ou vendas para criar materiais que atendam às necessidades específicas.</li>
+            <li>Garantir que os projetos sejam consistentes e atrativos para o público-alvo.</li>
+        </ul>
+        
+    </section>
+
+    <!-- Seção Atendimento -->
+    <section id="atendimento">
+        <h2>Atendimento</h2>
+        <p>Entre em contato conosco para mais informações, dúvidas ou suporte. Estamos disponíveis para atender você de forma rápida e eficiente.</p>
+        
+        <h3>Horários de Atendimento:</h3>
+        <ul>
+            <li><strong>Segunda a Sexta:</strong> 8h às 18h</li>
+            <li><strong>Sábado:</strong> 9h às 14h</li>
+            <li><strong>Domingo e Feriados:</strong> Fechado</li>
+        </ul>
+    
+        <h3>Formas de Contato:</h3>
+        <ul>
+            <li><strong>Email:</strong> atendimento@sitepi.com</li>
+            <li><strong>Telefone:</strong> (11) 1234-5678</li>
+            <li><strong>WhatsApp:</strong> (11) 91234-5678</li>
+        </ul>
+    
+        <h3>Localização:</h3>
+        <p>Estamos localizados na Av. Central, 123 - São Paulo, SP.</p>
+        
+        <section class="form-container">
+            <h3>Fale Conosco:</h3>
+            <form action="/enviar-atendimento" method="POST">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" placeholder="Seu nome completo" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Seu email para contato" required>
+                
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Digite sua mensagem..." required></textarea>
+                
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+        
+    
+        <h3>Redes Sociais:</h3>
+        <ul>
+            <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+            <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+            <li><a href="https://www.linkedin.com" target="_blank">LinkedIn</a></li>
+        </ul>
+    </section>
+    
+
+    <!-- Seção Notificação Perfil -->
+    <section id="notificacao">
+        <h2>Notificação de Perfil</h2>
+        <img src="notificacao-alerta.png" alt="Alerta de Notificação" width="50%" />
+
+        <p>Mantenha seu perfil sempre atualizado e receba notificações importantes para melhorar sua experiência no site.</p>
+    
+        <h3>Por que ativar as notificações?</h3>
+        <ul>
+            <li>Saiba quando novas oportunidades compatíveis com seu perfil estiverem disponíveis.</li>
+            <li>Receba dicas personalizadas para melhorar sua visibilidade no mercado.</li>
+            <li>Seja informado sobre atualizações no seu perfil e feedbacks de empresas.</li>
+        </ul>
+    
+        <h3>Como configurar suas notificações:</h3>
+        <ol>
+            <li>Acesse a área de configurações do perfil clicando <a href="#">aqui</a>.</li>
+            <li>Selecione as categorias de notificações que deseja receber:
+                <ul>
+                    <li><strong>Vagas de emprego:</strong> Receba alertas de novas oportunidades.</li>
+                    <li><strong>Dicas de carreira:</strong> Conteúdo exclusivo para melhorar sua performance profissional.</li>
+                    <li><strong>Atualizações de perfil:</strong> Informações sobre alterações no seu cadastro.</li>
+                </ul>
+            </li>
+            <li>Escolha o meio de notificação:
+                <ul>
+                    <li>Email</li>
+                    <li>WhatsApp</li>
+                    <li>Notificações no próprio site</li>
+                </ul>
+            </li>
+        </ol>
+    
+        <h3>Status das Notificações:</h3>
+        <p>Verifique abaixo se as notificações estão ativas:</p>
+        <div>
+            <label>
+                <input type="checkbox" id="job-alerts" checked> Vagas de emprego
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" id="career-tips"> Dicas de carreira
+            </label>
+            <br>
+            <label>
+                <input type="checkbox" id="profile-updates"> Atualizações de perfil
+            </label>
+        </div>
+    
+        <h3>Central de Notificações:</h3>
+        <p>Acompanhe aqui as notificações mais recentes:</p>
+        <ul>
+            <li>[12/12/2024] Uma nova vaga foi encontrada para você: Desenvolvedor Web.</li>
+            <li>[10/12/2024] Seu perfil foi atualizado com sucesso.</li>
+            <li>[08/12/2024] Confira nossas dicas exclusivas sobre como melhorar seu currículo.</li>
+        </ul>
+    
+        <h3>Dúvidas ou Problemas?</h3>
+        <p>Se precisar de ajuda com suas notificações, entre em contato com nossa equipe de suporte:</p>
+        <ul>
+            <li><strong>Email:</strong> suporte@sitepi.com</li>
+            <li><strong>Telefone:</strong> (11) 1234-5678</li>
+        </ul>
+    </section>
+    
+
+    <!-- Seção Notificação Vaga -->
+    <section id="notificacao-vaga">
+        <h2>Central de Notificações</h2>
+
+
+        <img src="img-notificacao-de-vaga.jpg" alt="imagen sobre emprego" height="500">
+
+
+
+        <p>Fique por dentro das oportunidades mais recentes disponíveis.</p>
+    </section>
+
+    <!-- Seção Profissões -->
+    <section id="profissoes">
+        <h2>Profissões em Destaque</h2>
+        <ul>
+            <li>Desenvolvedor Web</li>
+            <p>   <!-- Perfis de Contratados -->
+                <section class="profiles">
+                    <div class="profile fade-in">
+                        <img src="homem-gravata.webp" alt="Imagem do Contratado">
+                        <div class="profile-description">
+                            <p><strong>Perfil dos Contratados</strong></p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <div class="rating">😊😐😞</div>
+                        </div>
+                    </div>
+            
+                    <div class="profile fade-in">
+                        <img src="mulher-gravata.png" alt="Imagem do Contratado">
+                        <div class="profile-description">
+                            <p><strong>Perfil dos Contratados</strong></p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <div class="rating">😊😐😞</div>
+                        </div>
+                    </div>
+                </section></p>
+            <li>Analista de Dados</li>
+            <li>Designer Gráfico</li>
+        </ul>
+    </section>
+    <script>
+        // Função para alternar entre as seções
+        function showSection(sectionId) {
+            // Oculta todas as seções
+            document.querySelectorAll('section').forEach(section => section.classList.remove('active'));
+
+            // Mostra apenas a seção selecionada
+            document.getElementById(sectionId).classList.add('active');
+        }
+        // Animação para elementos de entrada
+window.onload = function () {
+    const fadeElements = document.querySelectorAll(".fade-in");
+    fadeElements.forEach((el, index) => {
+        setTimeout(() => {
+            el.style.opacity = 1;
+        }, index * 200); // Atraso para cada elemento
+    });
+};
+function showLoginForm() {
+        document.getElementById('login-form').classList.add('active');
+    }
+    
+    function showRegisterForm() {
+        document.getElementById('register-form').classList.add('active');
+    }
+    
+    function closeModal(id) {
+        document.getElementById(id).classList.remove('active');
+    }
+    </script>
+   
+    
+</body>
+</html>
