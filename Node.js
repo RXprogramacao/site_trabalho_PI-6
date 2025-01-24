@@ -48,3 +48,18 @@ app.post('/login', async (req, res) => {
 
 // Iniciar o servidor
 app.listen(3000, () => console.log('Servidor rodando na porta 3000'));
+
+
+
+
+fetch('/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, password }),
+})
+    .then((response) => response.json())
+    .then((data) => {
+        localStorage.setItem('token', data.token);
+        alert('Login realizado com sucesso!');
+    })
+    .catch((error) => console.error('Erro:', error));

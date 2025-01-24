@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Site PI</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="logo.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-
 </head>
+
 <body>
 
-    <!-- Cabeçalho -->
-    <header>
-        <!-- Outros elementos do cabeçalho -->
-        <div class="auth-buttons">
-            <button onclick="showLoginForm()">Entrar</button>
-            <button onclick="showRegisterForm()">Cadastrar</button>
-        </div>
-    </header>
+   
+   
+    <!-- Outros elementos do cabeçalho -->
+    <div class="auth-buttons">
+        <button onclick="showLoginForm()">Entrar</button>
+        <button onclick="showRegisterForm()">Cadastrar</button>
+    </div>
+
     
     <!-- Formulário de Login -->
     <div id="login-form" class="modal">
@@ -39,6 +38,7 @@
     <!-- Formulário de Cadastro -->
     <div id="register-form" class="modal">
         <form action="/register" method="POST">
+            <img src="icone_cadastro.png" alt="">
             <h2>Cadastrar</h2>
             <label for="name-register">Nome:</label>
             <input type="text" id="name-register" name="name" required>
@@ -65,41 +65,41 @@
         
         <div class="icon">
             <button onclick="showSection('home')">
-                <img src="botao-home.png" alt="Ícone Home" class="button-icon">
-                <span>HOME</span>
+                <img src="botao-home.png" alt="Ícone Home" class="button-icon"> <br>
+                <span>HOME</span> 
             </button>
         </div>
         <div class="icon">
             <button onclick="showSection('vaga')">
-                <img src="perfil.png" alt="Ícone de Perfil" class="button-icon">
-                <span>DESCRIÇÃO DE VAGA</span>
+                <img src="perfil.png" alt="Ícone de Perfil" class="button-icon"> <br>
+                <span>DESCRIÇÃO DE VAGA</span> 
             </button>
         </div>
         <!-- Repita a estrutura para os demais botões -->
         
         <div class="icon">
             <button onclick="showSection('atendimento')">
-                <img src="atendimento.png" alt="Ícone de Atendimento" class="button-icon">
-                <span>ATENDIMENTO</span>
+                <img src="atendimento.png" alt="Ícone de Atendimento" class="button-icon"> <br>
+                <span>ATENDIMENTO</span> 
             </button>
         </div>
         <div class="icon">
             <button onclick="showSection('notificacao')">
-                <img src="notificacao-do-usuario.png" alt="Ícone de Notificação" class="button-icon">
-                <span>NOTIFICAÇÃO PERFIL</span>
+                <img src="notificacao-do-usuario.png" alt="Ícone de Notificação" class="button-icon"> <br>
+                <span>NOTIFICAÇÃO PERFIL</span> 
             </button>
         </div>
 
         <div class="icon">
             <button onclick="showSection('notificacao-vaga' )">
-                <img src="vaga notific.png" alt="Ícone de Vaga" class="button-icon">
-                <span>CENTRAL DE NOTIFICAÇÕES</span>
+                <img src="vaga notific.png" alt="Ícone de Vaga" class="button-icon"> <br>
+                <span>CENTRAL DE NOTIFICAÇÕES</span> 
             </button>
         </div>
 
         <div class="icon">
             <button onclick="showSection('profissoes' )">
-                <img src="professor.png" alt="Ícone de Profissões" class="button-icon">
+                <img src="professor.png" alt="Ícone de Profissões" class="button-icon">  <br>
                 <span>PROFISSÕES</span>
             </button>
         </div>
@@ -395,5 +395,6 @@ function showLoginForm() {
         document.getElementById(id).classList.remove('active');
     }
     </script>
+    
 </body>
 </html>
