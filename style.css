@@ -17,22 +17,135 @@ img {
     width: 100; /* Define largura da imagem (valor incorreto, precisa de "px", "%", etc.) */
 }
 
+/* Estilo geral para os modais */
 .modal {
-    display: none; /* Oculta o modal por padrão */
-    position: fixed; /* Posiciona o modal em relação à janela do navegador */
-    top: 50%; /* Centraliza verticalmente */
-    left: 50%; /* Centraliza horizontalmente */
-    transform: translate(-50%, -50%); /* Ajusta o modal para o centro exato */
-    background-color: white; /* Define a cor de fundo do modal */
-    padding: 20px; /* Adiciona espaçamento interno */
-    border-radius: 8px; /* Arredonda os cantos */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra ao modal */
-    align-items: right; /* Sem efeito aqui */
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Garante que o modal fique acima do header */
 }
 
+/* Exibir modal quando ativo */
 .modal.active {
-    display: block; /* Torna o modal visível quando ativo */
+    display: flex; /* Mostra o modal e centraliza com flexbox */
 }
+
+/* Estilo do formulário */
+.modal form {
+    background: #ffffff; /* Fundo branco */
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    z-index: 1010; /* Garante que o formulário esteja acima do modal */
+    animation: fadeIn 0.3s ease-in-out; /* Animação suave */
+}
+
+/* Cabeçalho do formulário */
+.modal form h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #333333;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Estilos dos rótulos */
+.modal form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #555555;
+    font-size: 0.9rem;
+}
+
+/* Campos de entrada */
+.modal form input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.modal form input:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+/* Botões */
+.modal form button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.modal form button[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+}
+
+.modal form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.modal form button[type="button"] {
+    background-color: #cccccc;
+    color: #333333;
+    margin-top: 0.5rem;
+}
+
+.modal form button[type="button"]:hover {
+    background-color: #aaaaaa;
+}
+
+/* Imagem no formulário de cadastro */
+.modal form img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+}
+
+/* Animação de aparição */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Garante que o body ocupe toda a altura da tela */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Evita scroll quando o modal está ativo */
+}
+
+/* Estilo para header (caso necessário) */
+header {
+    position: relative; /* Garante que não interfira no modal */
+    z-index: 1; /* Fica abaixo do modal */
+}
+
 
 /* Cabeçalho */
 header {
@@ -48,7 +161,8 @@ header {
 }
 
 header .logo {
-    width: 50px; /* Define a largura do logo */
+    height: 40px;
+    width: 40px; /* Define a largura do logo */
     align-items: center; /* Sem efeito aqui */
 }
 

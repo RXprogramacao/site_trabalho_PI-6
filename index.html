@@ -365,36 +365,7 @@
         </ul>
     </section>
 
-    <script>
-        // Função para alternar entre as seções
-        function showSection(sectionId) {
-            // Oculta todas as seções
-            document.querySelectorAll('section').forEach(section => section.classList.remove('active'));
 
-            // Mostra apenas a seção selecionada
-            document.getElementById(sectionId).classList.add('active');
-        }
-        // Animação para elementos de entrada
-window.onload = function () {
-    const fadeElements = document.querySelectorAll(".fade-in");
-    fadeElements.forEach((el, index) => {
-        setTimeout(() => {
-            el.style.opacity = 1;
-        }, index * 200); // Atraso para cada elemento
-    });
-};
-function showLoginForm() {
-        document.getElementById('login-form').classList.add('active');
-    }
-    
-    function showRegisterForm() {
-        document.getElementById('register-form').classList.add('active');
-    }
-    
-    function closeModal(id) {
-        document.getElementById(id).classList.remove('active');
-    }
-    </script>
-    
+    <script src="script.js"></script>
 </body>
 </html>
